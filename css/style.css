@@ -1,0 +1,80 @@
+:root {
+  --white: rgba(255, 255, 255, 0.3);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.bg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(to left, #fc00ff, #00dbde);
+  background-size: 150% 150%;
+  animation: bggradient 10s ease infinite;
+}
+
+.fluid {
+  width: 40vh;
+  height: 40vh;
+  background: var(--white);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--white);
+  animation: fluidrotate 30s ease infinite;
+  position: relative;
+  z-index: 1000;
+}
+
+.title {
+  font-size: clamp(40px, 10vw, 80px);
+  color: #fff;
+  position: absolute;
+  z-index: 0;
+}
+
+@keyframes bggradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes fluidrotate {
+  0%,
+  100% {
+    border-radius: 30% 70% 70% 30% / 44% 45% 55% 56%;
+  }
+  14% {
+    width: 40vh;
+    height: 37vh;
+    border-radius: 69% 31% 31% 69% / 42% 36% 64% 58%;
+  }
+  28% {
+    border-radius: 38% 62% 43% 57% / 53% 36% 64% 47%;
+  }
+  42% {
+    width: 35vh;
+    height: 40vh;
+    border-radius: 69% 31% 31% 69% / 42% 36% 64% 58%;
+  }
+  56% {
+    border-radius: 69% 31% 31% 69% / 80% 64% 36% 20%;
+  }
+  70% {
+    width: 38vh;
+    height: 42vh;
+    border-radius: 13% 87% 31% 69% / 24% 49% 51% 76%;
+  }
+  84% {
+    border-radius: 68% 32% 57% 43% / 38% 35% 65% 62%;
+  }
+}
